@@ -1,0 +1,21 @@
+student_id,name,gpa,attendance_rate,assignments_completed,risk_level,risk_factors
+NG101,Emeka Okafor,3.8,0.95,18,Low,
+NG102,Zainab Abubakar,1.5,0.60,4,High,Low Attendance;GPA < 2.0
+NG103,Chinedu Obi,2.2,0.75,8,Medium,Missing Assignments
+NG104,Adesua Etomi,3.9,0.98,20,Low,
+NG105,Tunde Bakare,1.9,0.65,5,High,Low Attendance;GPA < 2.0
+NG106,Chioma Adebayo,3.5,0.90,16,Low,
+NG107,Yusuf Mohammed,2.8,0.80,10,Medium,Low Attendance
+NG108,Funke Akindele,3.2,0.88,14,Low,
+NG109,Ibrahim Musa,1.2,0.50,2,High,Critical Attendance;GPA < 1.5
+NG110,Ngozi Eze,2.5,0.78,9,Medium,Missing Assignments
+NG111,Femi Fashola,3.6,0.92,17,Low,
+NG112,Fatima Bello,1.8,0.55,3,High,Low Attendance;GPA < 2.0
+NG113,Kelechi Iheanacho,2.9,0.82,11,Medium,
+NG114,Bolaji Alakija,3.7,0.96,19,Low,
+NG115,Amarachi Umeh,2.1,0.70,7,Medium,Low Attendance
+NG116,Ahmed Sanni,1.6,0.58,4,High,Risk of Dropout
+NG117,Simi Ogunleye,3.4,0.91,15,Low,
+NG118,Osas Ighodaro,2.7,0.79,10,Medium,Missing Assignments
+NG119,Ebuka Obi-Uchendu,3.9,0.99,20,Low,
+NG120,Halima Dangote,2.4,0.72,6,Medium,Low Attendance
