@@ -65,3 +65,10 @@ class SimulationResponse(BaseModel):
     risk_level: str
     probability: float
     feature_contributions: dict
+
+class MetricsResponse(BaseModel):
+    accuracy: float
+    precision: float
+    recall: float
+    f1_score: float
+    last_trained: str

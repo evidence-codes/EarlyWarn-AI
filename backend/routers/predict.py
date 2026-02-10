@@ -55,3 +55,20 @@ def simulate_risk(request: schemas.SimulationRequest, db: Session = Depends(data
         probability=probability,
         feature_contributions=contributions
     )
+
+@router.get("/metrics", response_model=schemas.MetricsResponse)
+def get_model_metrics():
+    import os
+    metrics_path = os.path.join(os.path.dirname(__file__), "../metrics.json")
+    if os.path.exists(metrics_path):
+        with open(metrics_path, "r") as f:
+            return json.load(f)
+    else:
+        # Return mock/default if not trained yet
+        return {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "last_trained": "Never"
+        }

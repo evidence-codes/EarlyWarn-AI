@@ -5,6 +5,8 @@ import StudentTable from "../components/StudentTable";
 import { PerformanceChart } from "../components/AnalyticsCharts";
 import SimulationPanel from "../components/SimulationPanel";
 import DataUpload from "../components/DataUpload";
+import ModelMetrics from "../components/ModelMetrics";
+import ManualEntryForm from "../components/ManualEntryForm";
 
 const API_URL = "http://localhost:8000"; // Should be env var
 
@@ -73,23 +75,41 @@ export default function Dashboard() {
 
         <main>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            {/* Quick Actions / Upload */}
+            {/* Optimization: Real-time Model Metrics */}
             <section>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <div className="bg-white overflow-hidden shadow-sm border border-gray-200 rounded-xl p-6 h-full">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                      Class Performance
-                    </h3>
-                    <PerformanceChart data={students} />
-                  </div>
+              <ModelMetrics />
+            </section>
+
+            {/* Quick Actions / Upload */}
+            {/* Class Performance Section */}
+            <section>
+              <div className="bg-white overflow-hidden shadow-sm border border-gray-200 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Class Performance
+                </h3>
+                <div className="h-[350px] w-full">
+                  <PerformanceChart data={students} />
                 </div>
-                <div className="lg:col-span-1">
+              </div>
+            </section>
+
+            {/* Data Entry Section */}
+            <section>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Data Upload */}
+                <div className="h-full">
                   <DataUpload
                     onDataLoaded={(newData) => {
-                      // Merge new data with existing students
-                      // In a real app, this would likely POST to the backend
                       setStudents((prev) => [...prev, ...newData]);
+                    }}
+                  />
+                </div>
+
+                {/* Manual Entry */}
+                <div className="h-full">
+                  <ManualEntryForm
+                    onStudentAdded={(newStudent: any) => {
+                      setStudents((prev) => [...prev, newStudent]);
                     }}
                   />
                 </div>

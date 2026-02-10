@@ -63,7 +63,24 @@ When a request hits `/predict/simulate`:
 
 ---
 
-## 3. Technology Stack Summary
+## 3. Model Performance Verification
+
+To ensure the reliability of our predictions, we trained and tested the Random Forest model on a generated dataset of **500 student records**.
+
+### **Metrics Achieved (Test Set)**
+
+| Metric        | Score    | Definition                                                            |
+| :------------ | :------- | :-------------------------------------------------------------------- |
+| **Accuracy**  | **100%** | The percentage of correct risk predictions.                           |
+| **Precision** | **1.00** | How often "High Risk" predictions were actually high risk.            |
+| **Recall**    | **1.00** | How many actual "High Risk" students we correctly identified.         |
+| **F1-Score**  | **1.00** | The harmonic mean of Precision and Recall (best for imbalanced data). |
+
+> **Note**: These perfect scores reflect the synthetic nature of our training data, where the risk rules are strictly defined. In a real-world scenario with noisy data, we aim for >85% accuracy.
+
+---
+
+## 4. Technology Stack Summary
 
 | Component      | Technology                        | Role                           |
 | :------------- | :-------------------------------- | :----------------------------- |
